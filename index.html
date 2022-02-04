@@ -125,10 +125,10 @@ a:hover {
           <center>
             <br>
             <video width=49% autoplay playsinline muted class="noloop">
-              <source src="images/hopper-merged-timed.mp4" type="video/mp4">
+              <source src="images/hopper-merged.mp4" type="video/mp4">
             </video>
             <video width=49% autoplay playsinline muted class="noloop">
-              <source src="images/walker2d-merged-timed.mp4" type="video/mp4">
+              <source src="images/walker2d-merged.mp4" type="video/mp4">
             </video>
             <br>
             <br>
@@ -138,10 +138,8 @@ a:hover {
             </span>
               &nbsp;&nbsp;
             <video width=49% autoplay playsinline muted class="noloop" onended="monitor()" style="vertical-align: middle;">
-              <source src="images/joined-timed.mp4" type="video/mp4">
+              <source src="images/joined.mp4" type="video/mp4">
             </video>
-            <!-- <br> -->
-            <!-- <br> -->
               &nbsp;&nbsp;
             <span style="opacity: 0.0; cursor: pointer;" onclick="replay()" class="nounderline replay">
               <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
@@ -153,14 +151,12 @@ a:hover {
         <br>
 
         <div class="content" align="left" style="width: 90%;">
-            <!-- <b><font size="4">Maze2D</font></b> -->
             <div class="title"><b>Variable-length planning</b></div>
-<!--             <br> -->
             <p>
               Diffuser's planning horizon is determined by the size of the random noise used to initialize the denoising process.
             </p>
-            <video width=90% loop autoplay playsinline muted>
-              <source src="images/halfcheetah-speed-timed.mp4" type="video/mp4">
+            <video width=90% loop autoplay playsinline muted class="loop">
+              <source src="images/halfcheetah-speed.mp4" type="video/mp4">
             </video>
         </div>
         <br>
@@ -173,3 +169,8 @@ a:hover {
 
 
 </div></body></html>
+
+<script>
+  retime(5, "noloop");
+  retime(8.1, "loop");
+</script>

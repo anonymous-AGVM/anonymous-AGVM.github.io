@@ -1,9 +1,7 @@
-duration=4
-
-for file in hopper-merged walker2d-merged joined halfcheetah-speed;
-# for file in joined;
-do
-	echo $file
+retime () {
+	file=$1
+	duration=$2
+	echo $file $duration
 	## print raw speed
 	frames=$(ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=nb_read_packets -of csv=p=0 \
 		images/${file}.mp4)
@@ -21,4 +19,13 @@ do
 	ffprobe -i images/${file}-timed.mp4 -show_entries format=duration -v quiet -of csv="p=0"
 
 	echo
+}
+
+duration=4
+
+for file in hopper-merged walker2d-merged joined;
+do
+	retime $file $duration
 done
+
+retime halfcheetah-speed 10

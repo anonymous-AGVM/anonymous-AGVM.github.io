@@ -26,10 +26,20 @@ document.write('\
     <link rel="shortcut icon" href="'+params["prefix"]+'images/favicon.ico">\
 ');
 
-// var monitor = document.getElementsByClassName('replay')[0];
-// monitor.onended = function() {
-//     console.log("The audio has ended");
-// };
+function retime(duration, class_name) {
+    console.log('retime')
+    var videos = document.getElementsByClassName(class_name);
+    console.log('videos', videos)
+    for (var i = 0; i < videos.length; i++) {
+        var video = videos[i];
+        video.onloadeddata = function() {
+            console.log('old', this.duration, duration);
+            this.playbackRate = this.duration / duration;
+            console.log('Retiming', this.playbackRate, this.duration, this.readyState)
+        };
+    }
+}
+
 function monitor() {
     var div = document.getElementsByClassName('replay')[0]
     div.style.opacity = 1.0;
