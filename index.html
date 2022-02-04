@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<script src="files/head.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Planning with Diffusion</title>
+<link rel="stylesheet" href="./files/font.css">
+<link rel="stylesheet" href="./files/main.css">
+
+<link rel="stylesheet" type="text/css"
+    href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+<style>
+body {
+  font-family: "Computer Modern Serif", serif;
+  font-size: 14pt;
+}
+
+
+* {padding:0;margin:0;box-sizing:border-box;}
+#video {
+  position: relative;
+  padding-bottom: 45%; /* 16:9 */
+  height: 0;
+}
+#video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 100%;
+  transform: translateX(12.5%);
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.link {
+  /*color: #0066CC;*/
+  color: #bb2222;
+  /*color: #882222;*/
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.nounderline:hover {
+  text-decoration: none;
+}
+
+</style>
+
+  <style type="text/css">/**
+ * Style sheet used by new LibX tooltip code
+ */
+
+/* We insert a <div> with libx-tooltip style under the body.
+ * This will inherit body's style - we can't afford to inherit undesirable 
+ * styles and we must redefine what we need.  OTOH, some things, e.g.
+ * font-size, might be ok to be inherited to stay within the page's tone.
+ */
+.libx-tooltip {
+    display: none;
+    overflow: visible;
+    padding: 5px;
+    z-index: 100;
+    background-color: #eee;
+    color: #000;
+    font-weight: normal;
+    font-style: normal;
+    text-align: left;
+    border: 2px solid #666;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.libx-tooltip p {
+    /* override default 1em margin to keep paragraphs inside a tooltip closer together. */
+    margin: .2em;
+}
+</style><style type="text/css">/**
+ * Style sheet used by LibX autolinking code
+ */
+.libx-autolink {
+}
+
+</style>
+
+</head>
+
+  <body>
+
+    <div class="outercontainer">
+      <div class="container" style="width: 90%;">
+
+        <div class="content project_title">
+          <br>
+          <h2>Planning with Diffusion for Flexible Behavior Synthesis</h2>
+<!--           <div>
+            <span class="tag">
+              <span class="venue"><b><a href="">ICML 2022 Supplementary Website</a></b></span>&nbsp;
+            </span>
+          </div> -->
+        </div>
+
+        <br><br>
+
+        <div class="content" style="width: 90%;">
+          <div class="title"><b>Planning as Denoising</b></div>
+          <p>
+            Diffuser is a <a href="https://arxiv.org/abs/1503.03585" class="link">denoising diffusion</a> <a href="https://arxiv.org/abs/2006.11239" class="link">probabilistic model</a> that plans by iteratively refining randomly sampled noise.
+            The denoising process lends itself to flexible conditioning, by either using gradients of an objective function to bias plans toward high-reward regions or conditioning the plan to reach a specified goal.
+          </p>
+          <center>
+            <br>
+            <video width=49% autoplay playsinline muted class="noloop">
+              <source src="images/hopper-merged-timed.mp4" type="video/mp4">
+            </video>
+            <video width=49% autoplay playsinline muted class="noloop">
+              <source src="images/walker2d-merged-timed.mp4" type="video/mp4">
+            </video>
+            <br>
+            <br>
+            <span style="opacity: 0.0; cursor: pointer;">
+              <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
+              <font style="vertical-align: middle; color: #bb2222;">replay</font>
+            </span>
+              &nbsp;&nbsp;
+            <video width=49% autoplay playsinline muted class="noloop" onended="monitor()" style="vertical-align: middle;">
+              <source src="images/joined-timed.mp4" type="video/mp4">
+            </video>
+            <!-- <br> -->
+            <!-- <br> -->
+              &nbsp;&nbsp;
+            <span style="opacity: 0.0; cursor: pointer;" onclick="replay()" class="nounderline replay">
+              <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
+              <font style="vertical-align: middle; color: #bb2222;">replay</font>
+            </span>
+          </center>
+        </div>
+        <br>
+        <br>
+
+        <div class="content" align="left" style="width: 90%;">
+            <!-- <b><font size="4">Maze2D</font></b> -->
+            <div class="title"><b>Variable-length planning</b></div>
+<!--             <br> -->
+            <p>
+              Diffuser's planning horizon is determined by the size of the random noise used to initialize the denoising process.
+            </p>
+            <video width=90% loop autoplay playsinline muted>
+              <source src="images/halfcheetah-speed-timed.mp4" type="video/mp4">
+            </video>
+        </div>
+        <br>
+        <br>
+      </div>
+
+    </div>
+
+<br><br><br><br>  
+
+
+</div></body></html>
