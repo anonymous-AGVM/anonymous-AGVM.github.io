@@ -58,6 +58,19 @@ a:hover {
   text-decoration: none;
 }
 
+.block_text {
+  position: relative;
+  bottom: 5px;
+}
+
+rect {
+  display: block;
+  /*vertical-align: bottom;*/
+  stroke-width: 3;
+  fill-opacity: 0.15;
+  stroke-opacity: 1.0;
+}
+
 </style>
 
   <style type="text/css">/**
@@ -151,17 +164,140 @@ a:hover {
         <br>
 
         <div class="content" align="left" style="width: 90%;">
-            <div class="title"><b>Variable-length planning</b></div>
-            <p>
-              Diffuser's planning horizon is determined by the size of the random noise used to initialize the denoising process.
-            </p>
-            <video width=90% loop autoplay playsinline muted class="loop">
-              <source src="images/halfcheetah-speed.mp4" type="video/mp4">
-            </video>
+          <div class="title"><b>Variable-length planning</b></div>
+          <p>
+            Diffuser's planning horizon is determined by the size of the random noise used to initialize the denoising process.
+          </p>
+          <video width=90% loop autoplay playsinline muted class="loop">
+            <source src="images/halfcheetah-speed.mp4" type="video/mp4">
+          </video>
         </div>
         <br>
         <br>
-      </div>
+
+        <div class="content" align="left" style="width: 90%;">
+          <div class="title"><b>Flexible behavior synthesis</b></div>
+          <p>
+            Lorem ipsum.
+          </p>
+          <!-- <span style="text-align:justify;"> -->
+
+            <!-- [0.3266436 0.3266436 0.3266436 1.       ] -->
+            <!-- [0.05021146 0.34176086 0.63060361 1.        ] -->
+            <!-- [0.67569396 0.06560554 0.08838139 1.        ] -->
+            <!-- [0.37305652 0.23626298 0.60046136 1.        ] -->
+
+          <div style="width: 40%;">
+            <!-- cond 0 -->
+
+            <!-- red > blue -->
+            <span class=block_text>height(</span>
+            <svg width="102" height="22">
+              <rect x="1" y="1" width="100" height="20"
+              style="fill:rgb(67.5%,6.5%,8.8%);stroke:rgb(67.5%,6.5%,8.8%);"/>
+            </svg>
+            <span class=block_text>) ></span>
+            <span class=block_text>height(</span>
+            <svg width="102" height="22">
+              <rect x="1" y="1" width="100" height="20"
+              style="fill:rgb(5%,34%,63%);stroke:rgb(5%,34%,63%);"/>
+            </svg>
+            <span class=block_text>)</span>
+            <br>
+
+            <!-- blue > grey -->
+            <span class=block_text>height(</span>
+            <svg width="102" height="22">
+              <rect x="1" y="1" width="100" height="20"
+              style="fill:rgb(5%,34%,63%);stroke:rgb(5%,34%,63%);"/>
+            </svg>
+            <span class=block_text>) ></span>
+            <span class=block_text>height(</span>
+            <svg width="102" height="22">
+              <rect x="1" y="1" width="100" height="20"
+              style="fill:rgb(32.6%,32.6%,32.6%);stroke:rgb(32.6%,32.6%,32.6%);"/>
+            </svg>
+            <span class=block_text>)</span>
+            <br>
+
+            <!-- grey > purple -->
+            <span class=block_text>height(</span>
+            <svg width="102" height="22">
+              <rect x="1" y="1" width="100" height="20"
+              style="fill:rgb(32.6%,32.6%,32.6%);stroke:rgb(32.6%,32.6%,32.6%);"/>
+            </svg>
+            <span class=block_text>) ></span>
+            <span class=block_text>height(</span>
+            <svg width="102" height="22">
+              <rect x="1" y="1" width="100" height="20"
+              style="fill:rgb(37%,23.6%,60%);stroke:rgb(37%,23.6%,60%);"/>
+            </svg>
+            <span class=block_text>)</span>
+          </div>
+
+          <div style="width: 45%;">
+            <!-- cond 1 -->
+
+            <!-- red > blue -->
+            <span class=block_text>height(</span>
+            <svg width="102" height="22">
+              <rect x="1" y="1" width="100" height="20"
+              style="fill:rgb(67.5%,6.5%,8.8%);stroke:rgb(67.5%,6.5%,8.8%);"/>
+            </svg>
+            <span class=block_text>) ></span>
+            <span class=block_text>height(</span>
+            <svg width="102" height="22">
+              <rect x="1" y="1" width="100" height="20"
+              style="fill:rgb(5%,34%,63%);stroke:rgb(5%,34%,63%);"/>
+            </svg>
+            <span class=block_text>)</span>
+            <br>
+
+            <!-- blue > grey -->
+            <span class=block_text>height(</span>
+            <svg width="102" height="22">
+              <rect x="1" y="1" width="100" height="20"
+              style="fill:rgb(5%,34%,63%);stroke:rgb(5%,34%,63%);"/>
+            </svg>
+            <span class=block_text>) ></span>
+            <span class=block_text>height(</span>
+            <svg width="102" height="22">
+              <rect x="1" y="1" width="100" height="20"
+              style="fill:rgb(32.6%,32.6%,32.6%);stroke:rgb(32.6%,32.6%,32.6%);"/>
+            </svg>
+            <span class=block_text>)</span>
+            <br>
+
+            <!-- grey > purple -->
+            <span class=block_text>height(</span>
+            <svg width="102" height="22">
+              <rect x="1" y="1" width="100" height="20"
+              style="fill:rgb(32.6%,32.6%,32.6%);stroke:rgb(32.6%,32.6%,32.6%);"/>
+            </svg>
+            <span class=block_text>) ></span>
+            <span class=block_text>height(</span>
+            <svg width="102" height="22">
+              <rect x="1" y="1" width="100" height="20"
+              style="fill:rgb(37%,23.6%,60%);stroke:rgb(37%,23.6%,60%);"/>
+            </svg>
+            <span class=block_text>)</span>
+            <br>
+          </div>
+            
+<!--             <svg width="350" height="120">
+              <rect x="50" y="20" width="100" height="20"
+              style="fill:rgb(67.5%,6.5%,8.8%);stroke:rgb(67.5%,6.5%,8.8%);"/>
+              <rect x="50" y="50" width="100" height="20"
+              style="fill:rgb(32.6%,32.6%,32.6%);stroke:rgb(32.6%,32.6%,32.6%);"/>
+              <rect x="220" y="20" width="100" height="20"
+              style="fill:rgb(37%,23.6%,60%);stroke:rgb(37%,23.6%,60%);"/>
+              <rect x="220" y="50" width="100" height="20"
+              style="fill:rgb(5%,34%,63%);stroke:rgb(5%,34%,63%);"/>
+            </svg> -->
+
+          <!-- </span> -->
+
+        </div>
 
     </div>
 
