@@ -40,18 +40,18 @@ function retime(duration, class_name) {
     }
 }
 
-function monitor() {
-    var div = document.getElementsByClassName('replay')[0]
+function monitor(replay_name) {
+    var div = document.getElementsByClassName(replay_name)[0]
     div.style.opacity = 1.0;
 }
 
-function replay() {
-    var videos = document.getElementsByClassName('noloop');
+function replay(class_name, replay_name) {
+    var videos = document.getElementsByClassName(class_name);
     for (var i = 0; i < videos.length; i++) {
         var video = videos[i];
         video.currentTime = 0;
         video.play();
     }
-    var div = document.getElementsByClassName('replay')[0]
+    var div = document.getElementsByClassName(replay_name)[0]
     div.style.opacity = 0.0;
 }

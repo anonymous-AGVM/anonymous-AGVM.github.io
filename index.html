@@ -58,19 +58,6 @@ a:hover {
   text-decoration: none;
 }
 
-.block_text {
-  position: relative;
-  bottom: 5px;
-}
-
-rect {
-  display: block;
-  /*vertical-align: bottom;*/
-  stroke-width: 3;
-  fill-opacity: 0.15;
-  stroke-opacity: 1.0;
-}
-
 </style>
 
   <style type="text/css">/**
@@ -130,7 +117,7 @@ rect {
         <br><br>
 
         <div class="content" style="width: 90%;">
-          <div class="title"><b>Planning as Denoising</b></div>
+          <div class="title"><b>Planning as denoising</b></div>
           <p>
             Diffuser is a <a href="https://arxiv.org/abs/1503.03585" class="link">denoising diffusion</a> <a href="https://arxiv.org/abs/2006.11239" class="link">probabilistic model</a> that plans by iteratively refining randomly sampled noise.
             The denoising process lends itself to flexible conditioning, by either using gradients of an objective function to bias plans toward high-reward regions or conditioning the plan to reach a specified goal.
@@ -150,11 +137,11 @@ rect {
               <font style="vertical-align: middle; color: #bb2222;">replay</font>
             </span>
               &nbsp;&nbsp;
-            <video width=49% autoplay playsinline muted class="noloop" onended="monitor()" style="vertical-align: middle;">
+            <video width=49% autoplay playsinline muted class="noloop" onended="monitor('replay')" style="vertical-align: middle;">
               <source src="images/joined.mp4" type="video/mp4">
             </video>
               &nbsp;&nbsp;
-            <span style="opacity: 0.0; cursor: pointer;" onclick="replay()" class="nounderline replay">
+            <span style="opacity: 0.0; cursor: pointer;" onclick="replay('noloop', 'replay')" class="nounderline replay">
               <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
               <font style="vertical-align: middle; color: #bb2222;">replay</font>
             </span>
@@ -178,124 +165,62 @@ rect {
         <div class="content" align="left" style="width: 90%;">
           <div class="title"><b>Flexible behavior synthesis</b></div>
           <p>
-            Lorem ipsum.
+            Diffuser acts as an unconditional prior over possible behaviors.
+            We can plan for new test-time tasks by guiding its sampled plans with reward functions or constraints.
+            All of the plans below are executed by a single model.
           </p>
-          <!-- <span style="text-align:justify;"> -->
+          <br>
+          <div align="center">
+            <p>
+              <font style="color: #bb2222">Unconditional stacking:</font> Maximize the height of a block tower, with no further constraints.
+            </p>
+            <span style="opacity: 0.0; cursor: pointer;">
+              <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
+              <font style="vertical-align: middle; color: #bb2222;">replay</font>
+            </span>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;
+            <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;">
+              <source src='images/blocks/uncond_stack/0.mp4' type="video/mp4">
+            </video>
+            <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
+              <source src='images/blocks/uncond_stack/1.mp4' type="video/mp4">
+            </video>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="opacity: 0.0; cursor: pointer;" onclick="replay('noloop_blocks', 'replay_blocks')" class="nounderline replay_blocks">
+              <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
+              <font style="vertical-align: middle; color: #bb2222;">replay</font>
+            </span>
+          </div>
+          <br>
 
-            <!-- [0.3266436 0.3266436 0.3266436 1.       ] -->
-            <!-- [0.05021146 0.34176086 0.63060361 1.        ] -->
-            <!-- [0.67569396 0.06560554 0.08838139 1.        ] -->
-            <!-- [0.37305652 0.23626298 0.60046136 1.        ] -->
-
-          <div style="width: 40%;">
-            <!-- cond 0 -->
-
-            <!-- red > blue -->
-            <span class=block_text>height(</span>
-            <svg width="102" height="22">
-              <rect x="1" y="1" width="100" height="20"
-              style="fill:rgb(67.5%,6.5%,8.8%);stroke:rgb(67.5%,6.5%,8.8%);"/>
-            </svg>
-            <span class=block_text>) ></span>
-            <span class=block_text>height(</span>
-            <svg width="102" height="22">
-              <rect x="1" y="1" width="100" height="20"
-              style="fill:rgb(5%,34%,63%);stroke:rgb(5%,34%,63%);"/>
-            </svg>
-            <span class=block_text>)</span>
-            <br>
-
-            <!-- blue > grey -->
-            <span class=block_text>height(</span>
-            <svg width="102" height="22">
-              <rect x="1" y="1" width="100" height="20"
-              style="fill:rgb(5%,34%,63%);stroke:rgb(5%,34%,63%);"/>
-            </svg>
-            <span class=block_text>) ></span>
-            <span class=block_text>height(</span>
-            <svg width="102" height="22">
-              <rect x="1" y="1" width="100" height="20"
-              style="fill:rgb(32.6%,32.6%,32.6%);stroke:rgb(32.6%,32.6%,32.6%);"/>
-            </svg>
-            <span class=block_text>)</span>
-            <br>
-
-            <!-- grey > purple -->
-            <span class=block_text>height(</span>
-            <svg width="102" height="22">
-              <rect x="1" y="1" width="100" height="20"
-              style="fill:rgb(32.6%,32.6%,32.6%);stroke:rgb(32.6%,32.6%,32.6%);"/>
-            </svg>
-            <span class=block_text>) ></span>
-            <span class=block_text>height(</span>
-            <svg width="102" height="22">
-              <rect x="1" y="1" width="100" height="20"
-              style="fill:rgb(37%,23.6%,60%);stroke:rgb(37%,23.6%,60%);"/>
-            </svg>
-            <span class=block_text>)</span>
+          <div align="center">
+            <p>
+              <font style="color: #bb2222">Conditional stacking:</font> Stack towers subject to test-time constraints.
+            </p>
+            <video width=32% autoplay playsinline muted class="noloop_blocks">
+              <source src='images/blocks/cond_stack/0.mp4' type="video/mp4">
+            </video>
+            <video width=32% autoplay playsinline muted class="noloop_blocks">
+              <source src='images/blocks/cond_stack/1.mp4' type="video/mp4">
+            </video>
+<!--             <video width=24% autoplay playsinline muted class="noloop_blocks">
+              <source src='images/blocks/rearrange/0.mp4' type="video/mp4">
+            </video> -->
+            <video width=32% autoplay playsinline muted class="noloop_blocks">
+              <source src='images/blocks/rearrange/1.mp4' type="video/mp4">
+            </video>
+            <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
+              src='images/blocks/png/cond_0.png' width=32%>
+            <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
+              src='images/blocks/png/cond_1.png' width=32%>
+<!--             <img style="vertical-align: middle; padding-top: 2px; padding-left: 1%; padding-right: 1%;"
+              src='images/blocks/png/rearrange_0.png' width=24%> -->
+            <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
+              src='images/blocks/png/rearrange_1.png' width=32%>
           </div>
 
-          <div style="width: 45%;">
-            <!-- cond 1 -->
-
-            <!-- red > blue -->
-            <span class=block_text>height(</span>
-            <svg width="102" height="22">
-              <rect x="1" y="1" width="100" height="20"
-              style="fill:rgb(67.5%,6.5%,8.8%);stroke:rgb(67.5%,6.5%,8.8%);"/>
-            </svg>
-            <span class=block_text>) ></span>
-            <span class=block_text>height(</span>
-            <svg width="102" height="22">
-              <rect x="1" y="1" width="100" height="20"
-              style="fill:rgb(5%,34%,63%);stroke:rgb(5%,34%,63%);"/>
-            </svg>
-            <span class=block_text>)</span>
-            <br>
-
-            <!-- blue > grey -->
-            <span class=block_text>height(</span>
-            <svg width="102" height="22">
-              <rect x="1" y="1" width="100" height="20"
-              style="fill:rgb(5%,34%,63%);stroke:rgb(5%,34%,63%);"/>
-            </svg>
-            <span class=block_text>) ></span>
-            <span class=block_text>height(</span>
-            <svg width="102" height="22">
-              <rect x="1" y="1" width="100" height="20"
-              style="fill:rgb(32.6%,32.6%,32.6%);stroke:rgb(32.6%,32.6%,32.6%);"/>
-            </svg>
-            <span class=block_text>)</span>
-            <br>
-
-            <!-- grey > purple -->
-            <span class=block_text>height(</span>
-            <svg width="102" height="22">
-              <rect x="1" y="1" width="100" height="20"
-              style="fill:rgb(32.6%,32.6%,32.6%);stroke:rgb(32.6%,32.6%,32.6%);"/>
-            </svg>
-            <span class=block_text>) ></span>
-            <span class=block_text>height(</span>
-            <svg width="102" height="22">
-              <rect x="1" y="1" width="100" height="20"
-              style="fill:rgb(37%,23.6%,60%);stroke:rgb(37%,23.6%,60%);"/>
-            </svg>
-            <span class=block_text>)</span>
-            <br>
-          </div>
-            
-<!--             <svg width="350" height="120">
-              <rect x="50" y="20" width="100" height="20"
-              style="fill:rgb(67.5%,6.5%,8.8%);stroke:rgb(67.5%,6.5%,8.8%);"/>
-              <rect x="50" y="50" width="100" height="20"
-              style="fill:rgb(32.6%,32.6%,32.6%);stroke:rgb(32.6%,32.6%,32.6%);"/>
-              <rect x="220" y="20" width="100" height="20"
-              style="fill:rgb(37%,23.6%,60%);stroke:rgb(37%,23.6%,60%);"/>
-              <rect x="220" y="50" width="100" height="20"
-              style="fill:rgb(5%,34%,63%);stroke:rgb(5%,34%,63%);"/>
-            </svg> -->
-
-          <!-- </span> -->
 
         </div>
 
