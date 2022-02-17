@@ -174,36 +174,40 @@ a:hover {
             <p>
               <font style="color: #bb2222">Unconditional stacking:</font> Maximize the height of a block tower, with no further constraints.
             </p>
-            <span style="opacity: 0.0; cursor: pointer;">
-              <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
-              <font style="vertical-align: middle; color: #bb2222;">replay</font>
-            </span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;
             <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;">
-              <source src='images/blocks/uncond_stack/0.mp4' type="video/mp4">
-            </video>
-            <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
               <source src='images/blocks/uncond_stack/1.mp4' type="video/mp4">
             </video>
-              &nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="opacity: 0.0; cursor: pointer;" onclick="replay('noloop_blocks', 'replay_blocks')" class="nounderline replay_blocks">
-              <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
-              <font style="vertical-align: middle; color: #bb2222;">replay</font>
-            </span>
+            <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
+              <source src='images/blocks/uncond_stack/5.mp4' type="video/mp4">
+            </video>
+            <video width=32% autoplay playsinline muted class="noloop_blocks" style="vertical-align: middle;" onended="monitor('replay_blocks')">
+              <source src='images/blocks/uncond_stack/6.mp4' type="video/mp4">
+            </video>
           </div>
           <br>
 
+            <div style="width: 100%;">
+              <div style="float: left; width: 14%; display: inline-block;">
+                &nbsp;
+              </div>
+              <div style="float: left; width: 70%; display: inline-block; text-align: center;">
+                <p>
+                  <font style="color: #bb2222">Conditional stacking:</font> Stack towers subject to test-time constraints.
+                </p>
+              </div>
+              <div style="float: left; width: 14%; display: inline-block; opacity: 0.0; cursor: pointer;" onclick="replay('noloop_blocks', 'replay_blocks')" class="nounderline replay_blocks">
+                <img style="vertical-align: middle;" src='images/replay-arrow-cropped-01.png' width=15px>
+                <font style="vertical-align: middle; color: #bb2222;">replay</font>
+              </div>
+              <br style="clear: left;"/>
+            </div>
+
           <div align="center">
-            <p>
-              <font style="color: #bb2222">Conditional stacking:</font> Stack towers subject to test-time constraints.
-            </p>
-            <video width=32% autoplay playsinline muted class="noloop_blocks">
-              <source src='images/blocks/cond_stack/0.mp4' type="video/mp4">
-            </video>
             <video width=32% autoplay playsinline muted class="noloop_blocks">
               <source src='images/blocks/cond_stack/1.mp4' type="video/mp4">
+            </video>
+            <video width=32% autoplay playsinline muted class="noloop_blocks">
+              <source src='images/blocks/cond_stack/3.mp4' type="video/mp4">
             </video>
 <!--             <video width=24% autoplay playsinline muted class="noloop_blocks">
               <source src='images/blocks/rearrange/0.mp4' type="video/mp4">
@@ -212,9 +216,9 @@ a:hover {
               <source src='images/blocks/rearrange/1.mp4' type="video/mp4">
             </video>
             <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
-              src='images/blocks/png/cond_0.png' width=32%>
-            <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
               src='images/blocks/png/cond_1.png' width=32%>
+            <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
+              src='images/blocks/png/cond_3.png' width=32%>
 <!--             <img style="vertical-align: middle; padding-top: 2px; padding-left: 1%; padding-right: 1%;"
               src='images/blocks/png/rearrange_0.png' width=24%> -->
             <img style="vertical-align: middle; padding-top: 2px; padding-left: 2%; padding-right: 2%;"
