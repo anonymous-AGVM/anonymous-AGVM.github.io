@@ -1,1 +1,1 @@
-# anonymized-diffusion.github.io
+# anonymized-AGVM.github.io
